@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t; 
+	cin>> t;
+	while(t--){
+	    int x, y, z, a, b, c;
+	    cin>> x >> y >> z >> a >> b >> c;
+	    //we will start with XL ones
+		int xl =min(z, c); /*this ensures that max no. of XL people are happy as when z is greater than c then all of them will be happy, and when z is smaller
+							than c, then as many as possible of them can be happy by giving all shirts */
+							
+	    int res_xl= z - xl;//extra xl shirts which can be converted to l or s later
+	    y += res_xl; // we convert all xl shirts to L 
+	    int l = min(y, b);// repeat the process for L 
+	    int res_l = y - l;
+	    x += res_l; 
+	    int s = min(x, a);  // all remaining shirts are converted to s now , so now max no. of S people can be happy
+	    cout<< xl + l + s<< endl;
+	    
+	    
+	    
+	}
+
+}
